@@ -499,3 +499,46 @@ body {
     height: 220px;
   }
 }
+
+/* 超大屏幕优化 (2560px) */
+@media (min-width: 2400px) {
+  .app-main {
+    max-width: 95%;
+    padding: 2rem 4rem;
+  }
+  
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2.5rem;
+  }
+  
+  .emoji-image {
+    height: 250px;
+  }
+  
+  .folder-nav {
+    flex: 0 0 320px;
+    padding: 2rem;
+  }
+  
+  .emoji-grid {
+    padding: 2.5rem;
+  }
+  
+  .folder-item {
+    padding: 1rem 1.5rem;
+    font-size: 1.05rem;
+  }
+  
+  .grid-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .emoji-name {
+    font-size: 1.05rem;
+  }
+  
+  .emoji-size {
+    font-size: 0.95rem;
+  }
+}
