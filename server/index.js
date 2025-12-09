@@ -101,7 +101,9 @@ app.get('/api/image', async (req, res) => {
 
     // 设置响应头
     res.setHeader('Content-Type', mimeType);
-    res.setHeader('Content-Disposition', `inline; filename="${path.basename(imagePath)}"`);
+    // 对文件名进行编码，处理中文和特殊字符
+    const encodedFilename = encodeURIComponent(path.basename(imagePath));
+    res.setHeader('Content-Disposition', `inline; filename="${encodedFilename}"; filename*=UTF-8''${encodedFilename}`);
 
     // 流式传输文件
     const stream = fs.createReadStream(imagePath);
